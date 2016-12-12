@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>smartgit</id>
+    <version>8.0.0</version>
+    <title>SmartGit</title>
+    <authors>syntevo</authors>
+    <owners>sebnilsson</owners>
+    <description>SmartGit is a Git client with support for GitHub Pull Requests+Comments, SVN and Mercurial.</description>
+    <iconUrl>https://raw.github.com/sebnilsson/ChocolateyPackages/master/SmartGit/logo.png</iconUrl>
+    <licenseUrl>http://www.syntevo.com/smartgit/license.html</licenseUrl>
+    <packageSourceUrl>https://github.com/sebnilsson/ChocolateyPackages/tree/master/SmartGit</packageSourceUrl>
+    <projectUrl>http://www.syntevo.com/smartgit/</projectUrl>
+    <tags>smartgit git github hg mercurial dvcs admin</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="javaruntime" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

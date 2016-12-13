@@ -45,6 +45,7 @@ Of course, you can use SmartGit with your own repositories or other hosting prov
     <releaseNotes>https://www.syntevo.com/smartgit/changelog.txt</releaseNotes>
     <dependencies>
       <dependency id="javaruntime" version="7.0" />
+      <dependency id="chocolatey-core.extension" version="1.0.4" />
     </dependencies>
   </metadata>
   <files>

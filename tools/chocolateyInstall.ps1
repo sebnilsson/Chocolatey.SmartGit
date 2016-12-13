@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '8_0_0'
+$version = '8_0_3'
 $fileName = "smartgit-win32-setup-nojre-$version.zip"
 $packageArgs = @{
     packageName    = 'SmartGit'
@@ -8,8 +8,8 @@ $packageArgs = @{
     softwareName   = 'SmartGit'
     unzipLocation  = Get-PackageCacheLocation
 
-    checksum       = ''
-    checksumType   = ''
+    checksum       = '72BBC8F1238AFD70E8846A4CF8F6D32171DB6EEDF5FCC643246EB7276C51096B'
+    checksumType   = 'sha256'
     url            = "https://www.syntevo.com/static/smart/download/smartgit/$fileName"
 
     silentArgs     = '/SILENT /SUPPRESSMSGBOXES /NORESTART /SP-'

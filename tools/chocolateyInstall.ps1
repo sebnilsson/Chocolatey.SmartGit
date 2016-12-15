@@ -1,27 +1,31 @@
-﻿$packageName = 'SmartGit'
-$version = '8_0_0'
-$fileType = '.zip'
-$silentArgs = '/sp- /silent /norestart'
+﻿$ErrorActionPreference = 'Stop'
 
-$url = 'http://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-nojre-' + $version + $fileType
+$version = '8_0_3'
+$fileName = "smartgit-win32-setup-nojre-$version.zip"
+$packageArgs = @{
+    packageName    = 'SmartGit'
+    fileType       = 'exe'
+    softwareName   = 'SmartGit'
+    unzipLocation  = Get-PackageCacheLocation
 
-$httpRequest = [System.Net.WebRequest]::Create($url)
-$httpResponse = $httpRequest.GetResponse()
-$httpStatus = [int]$httpResponse.StatusCode
+    checksum       = '72BBC8F1238AFD70E8846A4CF8F6D32171DB6EEDF5FCC643246EB7276C51096B'
+    checksumType   = 'sha256'
+    url            = "https://www.syntevo.com/static/smart/download/smartgit/$fileName"
 
-if (!($httpStatus = 200)) {
-    Write-Error "File not found, trying to find it in the archive"
-    $url = 'http://www.syntevo.com/smartgit/download-archive?file=smartgithg/archive/smartgit-win32-setup-nojre-' + $version + $fileType
+    silentArgs     = '/SILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+    validExitCodes = @(0)
 }
 
-$unzipLocation = $(Split-Path -Parent $MyInvocation.MyCommand.Definition)
+Write-Verbose "Testing the default url location."
+if ((Get-WebHeaders $packageArgs.url).'Content-Type' -match "^text/html" ) {
+  Write-Warning "File not found, trying to find it in the archive."
+  $packageArgs.url = "https://www.syntevo.com/static/smart/download/smartgithg/archive/$fileName"
+}
 
-$installFileLocation = [io.path]::combine($unzipLocation, "setup-" + $version + ".exe")
-$changeLogFileLocation = [io.path]::combine($unzipLocation, "changelog.txt")
+Install-ChocolateyZipPackage @packageArgs
 
-Install-ChocolateyZipPackage -PackageName $packageName -Url $url -UnzipLocation $unzipLocation
+$packageArgs.file = (Join-Path $packageArgs.unzipLocation (Get-ChildItem $packageArgs.unzipLocation -Filter '*.exe' | select -first 1))
 
-Install-ChocolateyInstallPackage -PackageName $packageName -FileType "exe" -SilentArgs $silentArgs -File $installFileLocation
+Install-ChocolateyInstallPackage @packageArgs
 
-Remove-Item $installFileLocation
-Remove-Item $changeLogFileLocation
+Uninstall-ChocolateyZipPackage -PackageName $packageArgs.packageName -ZipFileName $fileName

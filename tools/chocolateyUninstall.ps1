@@ -1,27 +1,27 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'smartgit'
-$softwareName = 'SmartGit*'
-$installerType = 'EXE' 
-$silentArgs = '/sp- /silent /norestart'
+$packageName = 'SmartGit'
 
-$local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$uninstalled = $false
+[array]$key = Get-UninstallRegistryKey -SoftwareName $packageName
 
-$key = Get-ItemProperty -Path @($machine_key6432,$machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$softwareName" }
+if ($key.Count -eq 1) {
+  $key | % {
+    $packageArgs = @{
+	  packageName   = $packageName
+	  fileType      = 'exe'
+	  silentArgs    = '/SILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+	  validExitCodes= @(0)
+	  file          = "$($_.UninstallString)"
+	}
 
-if ($($key | measure).Count -eq 1) {
-  $key | % { 
-    $file = "$($_.UninstallString)"
-    Uninstall-ChocolateyPackage -PackageName $packageName -FileType $installerType -SilentArgs "$silentArgs" -File "$file"
+    Uninstall-ChocolateyPackage @packageArgs
   }
 } elseif ($key.Count -eq 0) {
   Write-Warning "$packageName has already been uninstalled by other means."
 } elseif ($key.Count -gt 1) {
-  Write-Warning "$key.Count matches found!"
+  Write-Warning "$($key.Count) matches found!"
   Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
   Write-Warning "Please alert package maintainer the following keys were matched:"
-  $key | % {Write-Warning "- $_.DisplayName"}
+  $key | % { Write-Warning "- $($_.DisplayName)" }
 }
-

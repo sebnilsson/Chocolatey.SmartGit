@@ -2,20 +2,50 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>smartgit</id>
-    <version>8.0.0</version>
+    <version>8.0.3</version>
     <title>SmartGit</title>
     <authors>syntevo</authors>
     <owners>sebnilsson</owners>
-    <description>SmartGit is a Git client with support for GitHub Pull Requests+Comments, SVN and Mercurial.</description>
-    <iconUrl>https://raw.github.com/sebnilsson/ChocolateyPackages/master/SmartGit/logo.png</iconUrl>
+    <summary>SmartGit is a Git client with support for GitHub Pull Requests+Comments, SVN and Mercurial.</summary>
+    <description>
+SmartGit is a Git client with support for GitHub Pull Requests+Comments, SVN and Mercurial.
+
+### Git for Professionals.
+For trivial Pull, Commit and Push you will find simpler alternatives than SmartGit.
+For **mastering the daily Git challenges**, you will hardly find a better tool to:
+* **boost your productivity** with **efficient workflows**
+* **safeguard you** from common pitfalls when using Git
+
+### One for All.
+Use SmartGit for **Git** and **SVN**.
+On **Windows**, **OS X** and **Linux**.
+Purchase your license once and use it on as many machines and operating systems you like.
+
+### Everything included.
+No need to install and configure additional tools.
+SmartGit comes with:
+* **Git-Flow**
+* **SSH-client**
+* **File Compare/Merge**
+
+### Interacting with popular platforms.
+SmartGit comes with special integrations for **GitHub**, **BitBucket** and **Atlassian Stash**
+to create and resolve **Pull Requests** and **Review Comments**.
+
+Of course, you can use SmartGit with your own repositories or other hosting providers (e.g **GitLab**). 
+    </description>
+    <iconUrl>https://cdn.rawgit.com/sebnilsson/Chocolatey.SmartGit/34094052763d29763068e287b238e944d2a476d2/logo.png</iconUrl>
     <licenseUrl>http://www.syntevo.com/smartgit/license.html</licenseUrl>
-    <packageSourceUrl>https://github.com/sebnilsson/ChocolateyPackages/tree/master/SmartGit</packageSourceUrl>
+    <packageSourceUrl>https://github.com/sebnilsson/Chocolatey.SmartGit</packageSourceUrl>
     <projectUrl>http://www.syntevo.com/smartgit/</projectUrl>
-    <tags>smartgit git github hg mercurial dvcs admin</tags>
+    <docsUrl>https://www.syntevo.com/doc/display/SG/Manual</docsUrl>
+    <mailingListUrl>https://groups.google.com/forum/#!forum/smartgit</mailingListUrl>
+    <tags>smartgit git github hg mercurial dvcs admin freeware trial</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>https://www.syntevo.com/smartgit/changelog.txt</releaseNotes>
     <dependencies>
-      <dependency id="javaruntime" />
+      <dependency id="javaruntime" version="7.0" />
+      <dependency id="chocolatey-core.extension" version="1.0.4" />
     </dependencies>
   </metadata>
   <files>

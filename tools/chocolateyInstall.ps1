@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '17_0_5'
+$version = '17_1_3'
 $fileName = "smartgit-win32-setup-jre-$version.zip"
 $packageArgs = @{
     packageName    = 'SmartGit'
@@ -8,7 +8,7 @@ $packageArgs = @{
     softwareName   = 'SmartGit'
     unzipLocation  = Get-PackageCacheLocation
 
-    checksum       = '0809cd9007ab2f6f67cd12bebdf657669764bfb5'
+    checksum       = 'A3DA0E8B86195F749BBD895405FE35C03EA9E658'
     checksumType   = 'sha1'
     url            = "https://www.syntevo.com/static/smart/download/smartgit/$fileName"
 

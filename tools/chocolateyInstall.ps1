@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '18_1_3'
+$version = '18_1_4'
 $fileName = "smartgit-win-$version.zip"
 $packageArgs = @{
     packageName    = 'SmartGit'
@@ -19,7 +19,7 @@ $packageArgs = @{
 Write-Verbose "Testing the default url location."
 if ((Get-WebHeaders $packageArgs.url).'Content-Type' -match "^text/html" ) {
   Write-Warning "File not found, trying to find it in the archive."
-  $packageArgs.url = "https://www.syntevo.com/downloads/smartgit/$fileName"
+  $packageArgs.url = "https://www.syntevo.com/downloads/smartgit/archive/$fileName"
 }
 
 Install-ChocolateyZipPackage @packageArgs

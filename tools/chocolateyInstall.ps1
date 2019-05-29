@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '18_2_1'
+$version = '18_2_8'
 $fileName = "smartgit-win-$version.zip"
 $packageArgs = @{
     packageName    = 'SmartGit'

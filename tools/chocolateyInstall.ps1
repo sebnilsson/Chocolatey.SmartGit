@@ -8,7 +8,7 @@ $packageArgs = @{
     softwareName   = 'SmartGit'
     unzipLocation  = Get-PackageCacheLocation
 
-    checksum       = '6F75442ACB7F2B6617111A8642357A1C3E9B2BB4E42714D7845CB0996D504DF0'
+    checksum       = '5902C2E1E36D6AAEDC7F2047D31B4BEA0DE1D398AA62F46E09368F6A36955414'
     checksumType   = 'sha256'
     url            = "https://www.syntevo.com/downloads/smartgit/$fileName"
 

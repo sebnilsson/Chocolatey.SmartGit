@@ -6,7 +6,7 @@ $packageArgs = @{
     packageName    = 'SmartGit'
     fileType       = 'exe'
     softwareName   = 'SmartGit'
-    unzipLocation  = Get-PackageCacheLocation
+    unzipLocation  = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
     checksum       = 'EAC3686BD17D4BAE9C147F59966BF415D936AC8724FFB7403DDDFAB6B0C10120'
     checksumType   = 'sha256'

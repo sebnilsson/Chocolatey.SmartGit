@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '18_2_8'
+$version = '19_1_1'
 $fileName = "smartgit-win-$version.zip"
 $packageArgs = @{
     packageName    = 'SmartGit'
@@ -8,7 +8,7 @@ $packageArgs = @{
     softwareName   = 'SmartGit'
     unzipLocation  = Get-PackageCacheLocation
 
-    checksum       = '5902C2E1E36D6AAEDC7F2047D31B4BEA0DE1D398AA62F46E09368F6A36955414'
+    checksum       = 'EAC3686BD17D4BAE9C147F59966BF415D936AC8724FFB7403DDDFAB6B0C10120'
     checksumType   = 'sha256'
     url            = "https://www.syntevo.com/downloads/smartgit/$fileName"
 

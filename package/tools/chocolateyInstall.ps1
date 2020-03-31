@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '19_1_4'
+$version = '20_1_1'
 
 $packageName = 'SmartGit'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
@@ -14,7 +14,7 @@ $packageArgs = @{
     unzipLocation  = $toolsDir
     url64            = $url
 
-    checksum64       = 'ACECD596F94761025584320041FD945AE6D0A67F4D4848F5D8F7A2CA70AB71CF'
+    checksum64       = 'DB1472C5982C5659E43A93269EE9A6641E545C333767D2B432AD4839FB4F1CCC'
     checksumType64   = 'sha256'
 }
 

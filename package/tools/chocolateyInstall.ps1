@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$version = '20_1_1'
+$version = '20_1_2'
 
 $packageName = 'SmartGit'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"

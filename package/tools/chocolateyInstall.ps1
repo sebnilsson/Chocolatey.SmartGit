@@ -14,7 +14,7 @@ $packageArgs = @{
     unzipLocation  = $toolsDir
     url64            = $url
 
-    checksum64       = 'DB1472C5982C5659E43A93269EE9A6641E545C333767D2B432AD4839FB4F1CCC'
+    checksum64       = '30AB1489BCDE76B966615F16DBB0564A45935266FDB93B84DCAB6B5EDDF99EFB'
     checksumType64   = 'sha256'
 }
 

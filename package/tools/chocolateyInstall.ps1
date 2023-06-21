@@ -1,7 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 # Todo: Use javascript in a GitHub workflow to get the URL and hash of latest download
-$version = '21_1_1'
+# Check https://www.syntevo.com/smartgit/autoupdate for latest version
+$version = '22_1_5'
 
 $packageName = 'SmartGit'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
@@ -15,7 +16,7 @@ $packageArgs = @{
     unzipLocation  = $toolsDir
     url64            = $url
 
-    checksum64       = '3CFF55681DF7E5AA23ED52464234FB69349CDFA710A8235CDF87620F671519E3'
+    checksum64       = '748E293D243566A02FC43F75DCEA88739709CD67FCC3B7ADCD97B18E2A7D1455'
     checksumType64   = 'sha256'
 }
 
